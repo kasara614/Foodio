@@ -34,7 +34,7 @@
 ## Contributions  
 Contributions are welcome! Feel free to open issues or submit pull requests to enhance Foodio.
 
-## Below is the behind-the-scene plan, how all this build from scratch 🙂
+### Below is the behind-the-scene plan, how all this build from scratch 🙂
 
 - Bundler used is "Parcel"
 
