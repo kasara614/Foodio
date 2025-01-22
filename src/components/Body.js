@@ -73,18 +73,18 @@ const Body = () => {
   return !listOfRestaurant || listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
+    <div className="body flex flex-col items-center">
       <div className="filter flex">
         <div className="search m-4 p-4">
           <input type="text"
             data-testid="searchInput"
-            className="border border-solid border-black"
+            className="border border-solid border-black rounded-lg p-1"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
-          <button className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+          <button className="px-4 py-2 bg-[#E96034] m-4 rounded-lg"
             onClick={() => {
               //filter the restaurant cards and update the UI
               // searchText
@@ -97,21 +97,12 @@ const Body = () => {
             }}> Search</button>
         </div>
         <div className="m-4 p-4 flex items-center">
-          <button className="px-4 py-2 bg-blue-100 m-4 rounded-full" onClick={() => {
+          <button className="px-4 py-2 bg-[#E96034] m-4 rounded-lg" onClick={() => {
             const filteredList = listOfRestaurant.filter((res) => res.avgRating > 4);
             setListOfRestaurant(filteredList);
           }}>
             Top Rated Restaurant</button>
         </div>
-
-        <div className="m-4 p-4 flex items-center">
-          <label>User Name: </label>
-          <input className="border border-black p-2"
-            value={loggedInUser}
-            onChange={(e) => setUserName(e.target.value)} />
-
-        </div>
-
       </div>
       <div className="res-container flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (
@@ -124,8 +115,6 @@ const Body = () => {
               ) : (
                 <RestaurantCard resData={restaurant} />)
             }
-
-
           </Link>
         ))}
       </div>
