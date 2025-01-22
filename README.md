@@ -1,24 +1,42 @@
-# Namaste React 🚀
+# Foodio  
 
-# Parcel
+**Foodio** is a React-based web application that leverages the Live API to fetch and display restaurant data and menus. It provides users with an intuitive and seamless experience for exploring restaurants and their offerings.  
 
-- Dev Build
-- Local Server
-- HMR = Hot Module Replacement
-- File Watching Algorithm - written in C++
-- Caching = Faster Builds
-- Image Optimization
-- Minification
-- Bundling
-- Compress
-- Consistent Hashing
-- Code Splitting
-- Differential Bundling - support older browser
-- Diagnostic
-- Error Handling
-- HTTPs
-- Tree Shaking - remove unused code
-- Different dev and production bundles
+## Features  
+- Fetch restaurant details and menus directly from Live online Food Order platform.  
+- User-friendly interface built using React.  
+- Search and filter options for easy navigation.  
+- Responsive design for optimal performance on all devices.  
+
+## Technologies Used  
+- **React.js**: Frontend framework for building the user interface.  
+- **CSS/tailwind CSS**: For styling the application.  
+- **Live API**: To fetch restaurant and menu data.  
+
+## Getting Started  
+1. Clone the repository:  
+     
+   git clone https://github.com/kasara614/foodio.git  
+     
+2. Navigate to the project directory:  
+     
+   cd foodio  
+  
+3. Install dependencies:  
+     
+   npm install  
+     
+4. Start the development server:  
+     
+   npm start  
+
+
+## Contributions  
+Contributions are welcome! Feel free to open issues or submit pull requests to enhance Foodio.
+
+## Below is the behind-the-scene plan, how all this build from scratch 🙂
+
+- Bundler used is "Parcel"
 
 /**   Food Ordering App Planning
  * Header
@@ -36,16 +54,6 @@
  *  - Address
  *  - Contact
  */
-
- Two types of Exports / Import
- 
- - Default Export / Import
-      export default Component;
-      import Component from "path";
-
- - Named Export/Import
-      export const Component;
-      import {Component} from "path";
 
 # React Hooks
 (Normal JS utility Functions)
@@ -65,18 +73,13 @@
                                         }
 - useEffect()
 
-# Routing in Web apps
-- Client Side Routing (react uses for single page apps) loads components on first network call
-- Server Side Routing - make network call on each route
-
 # Redux Tool kit
      - Install @reduxjs/toolkit and react-redux  
-          (npm i @reduxjs/toolkit) and npm (i react-redux)
      - Build our store
      - Connect our store to our app
-     - Slice (cartSlice)
-     - dispatch(action)
-     - Selector
+     - Slice creation
+     - dispatch an action
+     - useSelector() hook to Subscribe to the store
 
 # Types of testing (developer)
      - Unit Testing
@@ -84,8 +87,7 @@
      - End to End Testing - e2e testing
 
 # Setting up Testing in our app
-     - Install React Testing Library
-     - Installed jest
+     - Install React Testing Library, jest
      - Installed Babel dependencies (from jest website - "using babel")
      - Configure Babel (create new file "babel.config.js")
      - Configure Parcel Config file to disable default babel transpilation (create new file ".parcelrc" from Parcel docs)
