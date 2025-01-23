@@ -1,4 +1,4 @@
-import { PROXY_URL, MENU_API } from "../utils/constants";
+import { MENU_API } from "../utils/constants";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";

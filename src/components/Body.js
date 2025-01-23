@@ -1,7 +1,7 @@
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import { PROXY_URL, JP_URL } from "../utils/constants";
+import { JP_URL } from "../utils/constants";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
@@ -20,7 +20,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      PROXY_URL + JP_URL
+      JP_URL
     );
     const json = await data.json();
 
