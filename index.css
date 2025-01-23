@@ -1,0 +1,127 @@
+/* this delete all normal CSS for tailwind CSS */
+/* *{
+  margin: 0;
+  padding: 0;
+} 
+.header {
+display: flex;
+justify-content: space-between;
+border: 1px solid black;
+margin: 0.5rem;
+}
+
+.logo {
+width: 120px;
+}
+
+.nav-items > ul{
+display: flex;
+font-size: 25px;
+}
+
+.nav-items > ul > li {
+  margin: 10px;
+  padding: 10px;
+  list-style: none;
+}
+
+.res-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.res-card{
+  margin: 1rem;
+  padding: 5px;
+  width: 200px;
+  height: 400px;
+}
+
+.res-card:hover{
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.search{
+  padding: 10px;
+}
+
+.res-card-img{
+  width: 100%;
+  height: 50%;
+}
+
+.filter{
+  display: flex;
+}
+
+.filter-btn{
+  margin: 10px;
+  cursor: pointer;
+  background-color: initial;
+  background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow .2s;
+} 
+
+.filter-btn:hover {
+  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+}
+
+.filter-btn:active {
+            transform: scale(0.98);
+            box-shadow: 3px 2px 22px 1px rgba(253, 76, 0, 0.24);
+        }
+
+.shimmer-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card{
+  margin: 20px;
+  width: 200px;
+  height: 400px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.user-card{
+  margin: 10px;
+  padding:10px;
+  border: 1px solid black;
+}
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
