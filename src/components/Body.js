@@ -1,54 +1,36 @@
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
-// import resList from "../utils/mockData";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import { PROXY_URL, BHL_URL, JP_URL } from "../utils/constants";
+import { PROXY_URL, JP_URL } from "../utils/constants";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
 
 const Body = () => {
 
-  // Local State Variable - Super powerful variable
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-
   const [searchText, setSearchText] = useState("");
 
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   // Whenever state variables update, react triggers a reconciliation cycle (re-renders the component).
-  console.log("Body Rendered");
-
-
-  //useState() return array - we do "Array Destructuring" on the fly above, nothing else below is the  real Array Destructuring
-
-  // const arr = useState(resList);
-  //const [listOfRestaurant, setListOfRestaurant] = arr;
-  // const listOfRestaurant = arr[0];      //this is javascript not even react
-  // const setListOfRestaurant = arr[1];
-
   useEffect(() => {
-    // console.log("useEffect Called");
     fetchData();
   }, []);
-
-  // console.log("Body rendered");
 
   const fetchData = async () => {
     const data = await fetch(
       PROXY_URL + JP_URL
     );
-
     const json = await data.json();
-    // console.log(json);
-    // console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-    // console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants.map(restaurant => restaurant.info));
 
     // Optional Chaining
-    setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.map(restaurant => restaurant.info));
+    const restaurants = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.map(
+      (restaurant) => restaurant.info
+    );
 
-    setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.map(restaurant => restaurant.info));
+    setListOfRestaurant(restaurants);
+    setFilteredRestaurant(restaurants);
   };
 
   const onlineStatus = useOnlineStatus();
@@ -61,19 +43,11 @@ const Body = () => {
     );
   }
 
-  const { loggedInUser, setUserName } = useContext(UserContext);
-
-  // Conditional Rendering
-  // if (listOfRestaurant.length === 0) {
-  //   return <Shimmer />;
-  // }
-
-  console.log(listOfRestaurant);
 
   return !listOfRestaurant || listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body flex flex-col items-center">
+    <div className="body flex flex-col items-center px-40">
       <div className="filter flex">
         <div className="search m-4 p-4">
           <input type="text"
@@ -86,20 +60,16 @@ const Body = () => {
           />
           <button className="px-4 py-2 bg-[#E96034] m-4 rounded-lg"
             onClick={() => {
-              //filter the restaurant cards and update the UI
-              // searchText
-              console.log(searchText);
+              const filtered = listOfRestaurant.filter((res) => res.name.toLowerCase().includes(searchText.toLowerCase()));
 
-              const filteredRestaurant = listOfRestaurant.filter((res) => res.name.toLowerCase().includes(searchText.toLowerCase()));
-
-              setFilteredRestaurant(filteredRestaurant);
+              setFilteredRestaurant(filtered);
 
             }}> Search</button>
         </div>
         <div className="m-4 p-4 flex items-center">
           <button className="px-4 py-2 bg-[#E96034] m-4 rounded-lg" onClick={() => {
-            const filteredList = listOfRestaurant.filter((res) => res.avgRating > 4);
-            setListOfRestaurant(filteredList);
+            const topRated = listOfRestaurant.filter((res) => res.avgRating > 4.5);
+            setFilteredRestaurant(topRated);
           }}>
             Top Rated Restaurant</button>
         </div>
@@ -121,5 +91,6 @@ const Body = () => {
     </div>
   );
 };
+
 
 export default Body;

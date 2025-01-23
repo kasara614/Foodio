@@ -1,40 +1,44 @@
-import { useContext } from "react";
-import UserContext from "../utils/UserContext";
+import SvgStar from "../Assests/svgStar";
 import { CDN_URL } from "../utils/constants";
+
 
 const RestaurantCard = (props) => {
   const { resData } = props;
 
-  const { loggedInUser } = useContext(UserContext);
-
   return (
     <div data-testid="resCard"
-      className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200">
+      className="m-4 p-4 w-64 rounded-lg bg-gray-100 hover:bg-gray-200">
       <img
-        className="rounded-lg"
+        className="rounded-lg h-40 w-60 object-cover "
         alt="res-logo"
         src={CDN_URL + resData.cloudinaryImageId}
       />
-      <h3 className="font-bold py-4 text-lg"> {resData.name}</h3>
-      <h4>{resData.cuisines.join(", ")}</h4>
-      <h4>Rated {resData.avgRating ?? "Rating not available"} out of 5</h4>
-      <h4>Delivery in {resData.sla.deliveryTime} minutes</h4>
-      <h4>{resData.costForTwo}</h4>
-      <h4>User: {loggedInUser}</h4>
-
+      <h3 className="font-bold py-4 text-lg truncate"> {resData.name}</h3>
+      <div className="flex items-center space-x-2 font-bold">
+        {resData.avgRating ? (
+          <>
+            <SvgStar />
+            <h4>{resData.avgRating}  • </h4>
+            <h4>{resData.sla.slaString}</h4>
+          </>
+        ) : (
+          <h4>{resData.sla.slaString}</h4>
+        )}
+      </div>
+      <h4 className="truncate text-gray-700">{resData.cuisines.join(", ")}</h4>
+      <h4 className="truncate text-gray-700">{resData.areaName}</h4>
     </div >
   );
 };
 
 // Higher Order Component
-
 // input - RestaurantCard ==> return RestaurantCardPromoted
 
 export const withPromotedLabel = (RestaurantCard) => {
   return (props) => {
     return (
       <div>
-        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">Promoted Veg</label>
+        <label className="absolute bg-[#e96034] text-gray m-2 p-1 rounded-lg">Promoted Veg</label>
         <RestaurantCard {...props} />
       </div>
     );
