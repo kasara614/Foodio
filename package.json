@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "(https://github.com/kasara614/namaste-react.git)"
+    "url": "(https://github.com/kasara614/Foodio.git)"
   },
   "keywords": [
     "react"
@@ -25,6 +25,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "babel-jest": "^29.7.0",
+    "gh-pages": "^6.3.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "parcel": "^2.13.3",
