@@ -1,4 +1,4 @@
-import SvgStar from "../Assests/svgStar";
+import SvgStar from "../Assests/SvgStar";
 import { CDN_URL } from "../utils/constants";
 
 
