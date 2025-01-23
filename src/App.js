@@ -13,20 +13,9 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
 
-<<<<<<< HEAD
-/**
- * Code Splitting
- * Chunking
- * Dynamic Bundling
- * Lazy loading
- * on demand loading
- */
+// const Grocery = lazy(() => import("./components/Grocery"));
 
-=======
->>>>>>> Foodio/git-pages
-const Grocery = lazy(() => import("./components/Grocery"));
-
-const About = lazy(() => import("./components/About"));
+// const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
 

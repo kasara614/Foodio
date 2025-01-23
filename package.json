@@ -1,9 +1,12 @@
 {
+  "homepage": "https://kasara614.github.io/Foodio",
   "name": "react",
   "version": "1.0.0",
   "description": "This is the React Learning",
   "scripts": {
     "start": "parcel index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "parcel build index.html",
     "test": "jest",
     "watch-test": "jest --watch"
