@@ -1,4 +1,4 @@
-# Foodio  
+# Foodio  [Live Demo](https://foodio614.netlify.app/)
 
 **Foodio** is a React-based web application that leverages the Live API to fetch and display restaurant data and menus. It provides users with an intuitive and seamless experience for exploring restaurants and their offerings.  
 
