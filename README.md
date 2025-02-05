@@ -1,7 +1,14 @@
 # Foodio  [Live Demo](https://foodio614.netlify.app/)
 
-**Foodio** is a React-based web application that leverages the Live API to fetch and display restaurant data and menus. It provides users with an intuitive and seamless experience for exploring restaurants and their offerings.  
+**Foodio** is a React-based web application that leverages the Live API to fetch and display restaurant data and menus. It provides users with an intuitive and seamless experience for exploring restaurants and their offerings.
 
+This application retrieves data from a remote server. You might encounter a "CORS" error in your browser's console, that does not show any data in the browser.
+**Steps to use a CORS unblock extension (Use with caution):**
+
+1. Install a CORS unblock extension from your browser's extension store (e.g., "CORS Unblock" or "Allow CORS: Access-Control Allow Origin").
+2. Enable the extension.
+3. Reload this application.
+ 
 ## Features  
 - Fetch restaurant details and menus directly from Live online Food Order platform.  
 - User-friendly interface built using React.  
