@@ -2,6 +2,7 @@
 
 **Foodio** is a React-based web application that leverages the Live API to fetch and display restaurant data and menus. It provides users with an intuitive and seamless experience for exploring restaurants and their offerings.
 
+## !important
 This application retrieves data from a remote server. You might encounter a "CORS" error in your browser's console, that does not show any data in the browser.
 **Steps to use a CORS unblock extension (Use with caution):**
 
